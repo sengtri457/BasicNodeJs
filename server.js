@@ -10,11 +10,13 @@ const MONGO_URI = process.env.MONGO_URI;
 const userRote = require("./Routes/user.route");
 const productRoute = require("./Routes/product.route");
 const categoryRoute = require("./Routes/category.route");
+const supplierRoute = require("./Routes/supplier.route");
 app.use(cors());
 app.use(express.json());
 app.use("/api/users", userRote);
 app.use("/api/products", productRoute);
 app.use("/api/categories", categoryRoute);
+app.use("/api/suppliers", supplierRoute);
 // Connect to MongoDB and then start the server
 mongoose
   .connect(MONGO_URI, {
